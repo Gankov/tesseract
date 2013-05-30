@@ -18,5 +18,13 @@ namespace Tesseract
         {
             return Interop.TessApi.ResultIteratorGetUTF8Text(handle, level);
         }
+        
+        /// <summary>
+		/// Gets the copy of iterator.
+		/// </summary>
+		public new ResultIterator Clone()
+		{
+			return new ResultIterator(Interop.TessApi.ResultIteratorCopy (handle));
+		}
     }
 }

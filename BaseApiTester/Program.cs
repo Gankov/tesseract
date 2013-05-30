@@ -47,6 +47,8 @@ namespace BaseApiTester
                                                             logger.Log("New line");
                                                         }
                                                         logger.Log("word: " + iter.GetText(PageIteratorLevel.Word));
+                                                        ResultIterator testiter = iter.Clone ();
+														logger.Log("from clone: " + testiter.GetText(PageIteratorLevel.Word));
                                                     }
                                                 } while (iter.Next(PageIteratorLevel.TextLine, PageIteratorLevel.Word));
                                             }
